@@ -48,7 +48,7 @@ const Cart = () => {
 >
       <Typography
         variant="h4"
-        mb={5}
+        sx={{ mb: 5 }}
       >
         Shopping Cart
       </Typography>
@@ -59,9 +59,7 @@ const Cart = () => {
         sx={{ mb: 6 }}
       >
         <Grid
-          item
-          xs={12}
-          md={8}
+          size={{ xs: 12, md: 8 }}
         >
           <Stack spacing={2} sx={{ mb: 4 }}>
             {cartData.cartItems.map((item) => (
@@ -77,9 +75,7 @@ const Cart = () => {
         </Grid>
 
         <Grid
-          item
-          xs={12}
-          md={4}
+          size={{ xs: 12, md: 4 }}
         >
           <PriceDetails
             totalItems={totalItems}

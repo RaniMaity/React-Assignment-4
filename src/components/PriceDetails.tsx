@@ -27,7 +27,7 @@ const PriceDetails = ({
       <CardContent sx={{ p: 3 }}>
         <Typography
           variant="h6"
-          fontWeight={700}
+          sx={{ fontWeight: 700 }}
         >
           PRICE DETAILS
         </Typography>
@@ -61,7 +61,7 @@ const PriceDetails = ({
           </Typography>
           <Typography
             color="success.main"
-            fontWeight={600}
+            sx={{ fontWeight: 600 }}
           >
             FREE
           </Typography>
@@ -78,18 +78,17 @@ const PriceDetails = ({
             background: "#f6f9ff",
           }}
         >
-          <Typography fontWeight={700}>
+          <Typography sx={{ fontWeight: 700 }}>
             Total Amount
           </Typography>
-          <Typography fontWeight={700}>
+          <Typography sx={{ fontWeight: 700 }}>
             ${totalPrice.toFixed(2)}
           </Typography>
         </Box>
 
         <Typography
-          mt={2}
           color="success.main"
-          fontWeight={600}
+          sx={{ mt: 2, fontWeight: 600 }}
         >
           You will save on delivery charges
         </Typography>

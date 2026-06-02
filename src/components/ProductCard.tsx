@@ -75,8 +75,8 @@ const ProductCard = ({ product }: Props) => {
       
         <Typography
           variant="subtitle1"
-          fontWeight={600}
           sx={{
+            fontWeight: 600,
             fontSize: "15px",
 
           

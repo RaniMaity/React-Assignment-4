@@ -1,16 +1,35 @@
-
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { formReducer, initialFormState } from "../reducer/form.reducer";
 import Stepper from "../components/form/stepper";
 
-
 const WizardForm = () => {
+
+  // LOCAL STORAGE THEKE DATA LOAD
+  const getInitialState = () => {
+    const savedData = localStorage.getItem("wizard-form");
+
+    if (savedData) {
+      return JSON.parse(savedData);
+    }
+
+    return initialFormState;
+  };
+
   const [state, dispatch] = useReducer(
     formReducer,
-    initialFormState
+    initialFormState,
+    getInitialState
   );
 
   const { currentStep, formData } = state;
+
+  // LOCAL STORAGE E AUTO SAVE
+  useEffect(() => {
+    localStorage.setItem(
+      "wizard-form",
+      JSON.stringify(state)
+    );
+  }, [state]);
 
   const handlePersonalChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -53,19 +72,27 @@ const WizardForm = () => {
   };
 
   const resetForm = () => {
+
+    // LOCAL STORAGE CLEAR
+    localStorage.removeItem("wizard-form");
+
     dispatch({ type: "RESET_FORM" });
   };
 
   const handleSubmit = () => {
+
     console.log("FINAL DATA:", state.formData);
 
     alert("Form Submitted Successfully!");
+
+    // SUBMIT ER POR LOCAL STORAGE CLEAR
+    localStorage.removeItem("wizard-form");
   };
 
   return (
     <div className="min-h-screen bg-[#eef3fb] flex items-center justify-center px-6 py-16">
 
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-4xl mx-auto">
 
         <div className="bg-white rounded-[30px] shadow-[0_20px_60px_rgba(15,23,42,0.12)] overflow-hidden border border-gray-100">
 
@@ -80,16 +107,16 @@ const WizardForm = () => {
               Complete all steps to continue
             </p>
 
-         
+            {/* STEPPER */}
             <div className="mt-10">
               <Stepper state={state} />
             </div>
           </div>
 
-          
+          {/* FORM BODY */}
           <div className="px-10 py-10">
 
-      
+            {/* STEP 1 */}
             {currentStep === 1 && (
               <div>
 
@@ -248,7 +275,7 @@ const WizardForm = () => {
               </div>
             )}
 
-         
+            {/* STEP 3 */}
             {currentStep === 3 && (
               <div>
 
@@ -306,7 +333,7 @@ const WizardForm = () => {
               </div>
             )}
 
-            
+            {/* BUTTONS */}
             <div className="flex items-center justify-between mt-12">
 
               <div className="flex gap-4">
@@ -357,4 +384,3 @@ const WizardForm = () => {
 };
 
 export default WizardForm;
-

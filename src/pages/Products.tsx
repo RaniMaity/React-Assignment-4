@@ -46,9 +46,7 @@ const Products = () => {
       <Container maxWidth="xl">
         <Typography
           variant="h4"
-          fontWeight={700}
-          mb={4}
-          textAlign="center"
+          sx={{ fontWeight: 700, mb: 4, textAlign: "center" }}
         >
           Our Products
         </Typography>
@@ -56,11 +54,7 @@ const Products = () => {
         <Grid container spacing={3}>
           {cartData.products.map((product: any) => (
             <Grid
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              lg={3}
+              size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
               key={product.id}
             >
               <ProductCard product={product} />

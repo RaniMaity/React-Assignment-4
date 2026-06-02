@@ -1,4 +1,3 @@
-import React from "react";
 import type { FormState } from "../../Services/typescript/interface/Form.interface";
 
 type Props = {

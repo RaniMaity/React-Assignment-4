@@ -37,14 +37,13 @@ const CartItem = ({
       }}
     >
       <CardContent sx={{ p: 3 }}>
-      <Typography variant="h6" fontWeight={600}>
+      <Typography variant="h6" sx={{ fontWeight: 600 }}>
           {item.title}
         </Typography>
 
         <Typography
           color="primary"
-          fontWeight={700}
-          mt={1}
+          sx={{ fontWeight: 700, mt: 1 }}
         >
           $ {item.price}
         </Typography>
@@ -91,7 +90,7 @@ const CartItem = ({
               -
             </Button>
 
-            <Typography fontWeight={600}>
+            <Typography sx={{ fontWeight: 600 }}>
               {item.quantity}
             </Typography>
 
