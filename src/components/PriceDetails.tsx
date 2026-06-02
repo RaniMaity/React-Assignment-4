@@ -21,7 +21,7 @@ const PriceDetails = ({
         borderRadius: 3,
         boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
         position: "sticky",
-        top: 24,mt:3
+        top: 24,
       }}
     >
       <CardContent sx={{ p: 3 }}>

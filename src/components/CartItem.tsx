@@ -24,7 +24,7 @@ const CartItem = ({
     <Card
       sx={{
     borderRadius: 3,
-    mb: 5,
+    
     background: "linear-gradient(135deg, #ffffff 0%, #f9fbff 100%)",
     border: "1px solid #e6eaf0",
     boxShadow: "0 4px 18px rgba(0,0,0,0.06)",
