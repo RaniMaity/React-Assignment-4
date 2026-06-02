@@ -1,0 +1,26 @@
+export const adressInfo=[
+    {
+        name:"address",
+        label:"Address",
+        type:"textarea",
+        required:true
+    },
+     {
+        name:"city",
+        label:"city",
+        type:"text",
+        required:true
+    },
+     {
+        name:"state",
+        label:"state",
+        type:"text",
+        required:true
+    },
+     {
+        name:"zipcode",
+        label:"Zipcode",
+        type:"number",
+        required:true
+    }
+]
