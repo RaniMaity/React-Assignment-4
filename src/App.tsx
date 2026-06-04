@@ -12,7 +12,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      {/* 🔥 Multiple Providers allowed */}
+   
       <CartProvider>
         <FormProvider>
           <RouterProvider router={router} />
